@@ -14,8 +14,8 @@ module FastPolylines
       result = ""
       last_lat = last_lng = 0
       points.each do |point|
-        lat = (point[0] * precision).round
-        lng = (point[1] * precision).round
+        lat = (point[0] * precision).round.to_i
+        lng = (point[1] * precision).round.to_i
         d_lat = lat - last_lat
         d_lng = lng - last_lng
         chunks_lat = encode_number(d_lat)
